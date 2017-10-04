@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/zhuishusecurity?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+  redis:
+     host: 123.206.190.163
+     port: 6379
+  session:
+    store-type: none
+server:
+  port: 8086
+security:
+  basic:
+    enabled: false
+
+
