@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标准登录页</title>
+</head>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+    function refreshcode(){
+        document.getElementById("imageCode").src= "/code/image?1="+Math.random();
+    }
+    function sendSms() {
+        $.getJSON("code/sms?mobile="+$("#mobile").val());
+        //$.getJSON("code/sms?mobile=1234567");
+
+    }
+</script>
+<body>
+<form action="/authentication/form" method="post">
+    <table>
+        <tr>
+            <td>用户名</td>
+            <td><input type="text" name="username"></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td>验证码</td>
+            <td><input type="text" name="imageCode" style="width: 60px"> <img id="imageCode" src="/code/image" onclick='refreshcode()'></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input name="remember-me" type="checkbox" value="true"/>记住我</td>
+        </tr>
+        <tr>
+            <td colspan="2"><button type="submit">登录</button></td>
+        </tr>
+    </table>
+</form>
+<form action="/authentication/mobile" method="post">
+    <table>
+        <tr>
+            <td>手机号</td>
+            <td><input type="text" name="mobile" id="mobile"></td>
+        </tr>
+        <tr>
+            <td>y验证码</td>
+            <td><input type="text" name="smsCode" > <a href="#" onclick="sendSms()" >发送到手机</a></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><button type="submit">登录</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
