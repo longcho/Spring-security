@@ -1,8 +1,8 @@
 package cn.longzzai.security.browser.authentication;
 
-import cn.longzzai.security.browser.support.SimpleResponse;
 import cn.longzzai.security.core.enums.LoginTypeEnum;
 import cn.longzzai.security.core.properties.SecurityRootProperties;
+import cn.longzzai.security.core.support.SimpleResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

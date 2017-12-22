@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标准绑定页</title>
+</head>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+    function refreshcode(){
+        document.getElementById("imageCode").src= "/code/image?1="+Math.random();
+    }
+    function sendSms() {
+        $.getJSON("code/sms?mobile="+$("#mobile").val());
+        //$.getJSON("code/sms?mobile=1234567");
+
+    }
+</script>
+<body>
+<h3>微信绑定</h3>
+<form action="/connect/weixin" method="post">
+    <table>
+        <tr>
+            <td colspan="2"><button type="submit">绑定</button></td>
+        </tr>
+    </table>
+</form>
+<form action="/connect/weixin" method="delete">
+    <table>
+        <tr>
+            <td colspan="2"><button type="submit">解绑</button></td>
+        </tr>
+    </table>
+</form>
+<h3>QQ绑定</h3>
+<form action="/connect/qq" method="post">
+    <table>
+        <tr>
+            <td colspan="2"><button type="submit">绑定</button></td>
+        </tr>
+    </table>
+</form>
+<form action="/connect/qq" method="delete">
+    <table>
+        <tr>
+            <td colspan="2"><button type="submit">解绑</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

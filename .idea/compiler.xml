@@ -6,20 +6,29 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="security-sso-clent2" />
+        <module name="security-sso-client1" />
+        <module name="security-sso-server" />
         <module name="zhuishu-security-app" />
         <module name="zhuishu-security-browser" />
         <module name="zhuishu-security-browser1" />
         <module name="zhuishu-security-core" />
         <module name="zhuishu-security-demo" />
+        <module name="zhuishusecurityauthorize" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="security-sso" target="1.8" />
+      <module name="security-sso-clent2" target="1.8" />
+      <module name="security-sso-client1" target="1.8" />
+      <module name="security-sso-server" target="1.8" />
       <module name="zhuishu-security" target="1.8" />
       <module name="zhuishu-security-app" target="1.8" />
       <module name="zhuishu-security-browser" target="1.8" />
       <module name="zhuishu-security-browser1" target="1.5" />
       <module name="zhuishu-security-core" target="1.8" />
       <module name="zhuishu-security-demo" target="1.8" />
+      <module name="zhuishusecurityauthorize" target="1.8" />
       <module name="zhuishusecuritybrowser" target="1.5" />
     </bytecodeTargetLevel>
   </component>

@@ -16,4 +16,13 @@ public class SecurityRootProperties {
 
     @Autowired
     private CodeProperties Code;
+
+    @Autowired
+    private SocialProperties social;
+
+    @Autowired
+    private SessionProperties session;
+
+    @Autowired
+    private Oauth2Properties oauth2;
 }

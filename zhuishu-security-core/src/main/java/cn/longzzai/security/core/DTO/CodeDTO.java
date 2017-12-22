@@ -3,6 +3,7 @@ package cn.longzzai.security.core.DTO;
 import lombok.Data;
 
 import java.awt.image.BufferedImage;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
  * 2017-10-23-9:55
  */
 @Data
-public class CodeDTO {
+public class CodeDTO implements Serializable{
     //验证码
     private String code;
     //过期时间

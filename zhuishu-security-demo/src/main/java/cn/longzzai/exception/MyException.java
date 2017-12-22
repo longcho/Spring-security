@@ -8,7 +8,7 @@ import lombok.Data;
  */
 @Data
 public class MyException extends RuntimeException {
-    String id;
+    private String id;
 
     public MyException(String message, String id) {
         super(message);

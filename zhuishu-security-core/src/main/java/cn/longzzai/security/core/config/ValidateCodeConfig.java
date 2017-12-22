@@ -1,8 +1,8 @@
 package cn.longzzai.security.core.config;
 
 import cn.longzzai.security.core.properties.SecurityRootProperties;
-import cn.longzzai.security.core.validate.image.ImageValidateCodeGenerator;
 import cn.longzzai.security.core.validate.api.ValidateCodeGenerator;
+import cn.longzzai.security.core.validate.image.ImageValidateCodeGenerator;
 import cn.longzzai.security.core.validate.sms.DefaultSmsCodeSender;
 import cn.longzzai.security.core.validate.sms.SmsCodeSender;
 import cn.longzzai.security.core.validate.sms.SmsValidateCodeGenerator;
@@ -37,4 +37,5 @@ public class ValidateCodeConfig {
     public SmsCodeSender smsCodeSender(){
        return new DefaultSmsCodeSender();
     }
+
 }

@@ -13,7 +13,9 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "longzzai.security.browser")
 public class BrowserProperties {
-    private String loginPage = "/login-browser.html";
+    private String loginPage = "/login-signIn.html";
+    private String signUpPage = "/login-signUp.html";
+    private String signOutPage;
     private LoginTypeEnum loginType =  LoginTypeEnum.JSON;
     private int rememberMeSeconds =  3600;
 }
