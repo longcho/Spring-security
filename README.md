@@ -3,12 +3,13 @@
 **启动过程**
 
 1.引入依赖
+```
 <dependency>
 	<groupId>com.imooc.security</groupId>
 	<artifactId>imooc-security-browser</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 </dependency>
-
+```
 2.配置系统(参见 application-example.properties)
 
 3.增加UserDetailsService接口实现
