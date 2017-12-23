@@ -12,6 +12,6 @@ import org.springframework.data.repository.NoRepositoryBean;
  *
  */
 @NoRepositoryBean
-public interface ImoocRepository<T> extends JpaRepository<T, Long>, JpaSpecificationExecutor<T> {
+public interface LongzzaiRepository<T> extends JpaRepository<T, Long>, JpaSpecificationExecutor<T> {
 
 }

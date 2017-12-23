@@ -2,6 +2,7 @@ package cn.longzzai.security.browser.authentication;
 
 import cn.longzzai.security.core.enums.LoginTypeEnum;
 import cn.longzzai.security.core.properties.SecurityRootProperties;
+import cn.longzzai.security.core.support.SimpleResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +29,12 @@ public class LongzzaiAuthenticationSuccessHandler extends SavedRequestAwareAuthe
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws ServletException, IOException {
         log.info("登录成功");
-        if (securityRootProperties.getBrowser().getLoginType().equals(LoginTypeEnum.JSON)){
+
+        if (securityRootProperties.getBrowser().getLoginType().equals(LoginTypeEnum.JSON)) {
             response.setContentType("application/json;charset=UTF-8");
-            response.getWriter().write(objectMapper.writeValueAsString(authentication));
-        }else {
+            String type = authentication.getClass().getSimpleName();
+            response.getWriter().write(objectMapper.writeValueAsString(new SimpleResponse(type)));
+        } else {
             super.onAuthenticationSuccess(request, response, authentication);
         }
     }

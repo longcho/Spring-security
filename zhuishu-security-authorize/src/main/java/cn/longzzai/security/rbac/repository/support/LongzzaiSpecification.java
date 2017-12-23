@@ -19,13 +19,13 @@ import org.springframework.data.jpa.domain.Specification;
  * @author jojo 2014-2-17 下午2:29:16
  *
  */
-public abstract class ImoocSpecification<T, C> extends AbstractEventConditionBuilder<T, C>
+public abstract class LongzzaiSpecification<T, C> extends AbstractEventConditionBuilder<T, C>
 		implements Specification<T> {
 
 	/**
 	 * @param condition
 	 */
-	public ImoocSpecification(C condition) {
+	public LongzzaiSpecification(C condition) {
 		super(condition);
 	}
 

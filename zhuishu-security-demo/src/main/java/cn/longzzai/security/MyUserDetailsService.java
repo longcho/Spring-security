@@ -2,9 +2,6 @@ package cn.longzzai.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.social.security.SocialUser;
@@ -17,17 +14,17 @@ import org.springframework.stereotype.Component;
  * 2017-10-18-8:13
  */
 @Component
-public class MyUserDetailsService implements UserDetailsService, SocialUserDetailsService {
+public class MyUserDetailsService implements SocialUserDetailsService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Override
+/*    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         String password = passwordEncoder.encode("123456");
         System.out.println("密码是："+password);
         return new User(username ,password , true ,true ,true ,true ,
                 AuthorityUtils.commaSeparatedStringToAuthorityList("admin,ROLE_USER"));
-    }
+    }*/
 
     @Override
     public SocialUserDetails loadUserByUserId(String userId) throws UsernameNotFoundException {

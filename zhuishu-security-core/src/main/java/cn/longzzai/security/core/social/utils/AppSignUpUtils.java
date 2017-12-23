@@ -24,7 +24,7 @@ public class AppSignUpUtils {
     private ConnectionFactoryLocator connectionFactoryLocator;
     public void saveConnectionDataOnRedis(ServletWebRequest request , ConnectionData connectionData){
         String key = getKey(request);
-        redisTemplate.opsForValue().set( key, connectionData, 10, TimeUnit.MINUTES);
+        redisTemplate.opsForValue().set( key, connectionData, 7200, TimeUnit.MINUTES);
     }
 
     public void doPostSignUp(String userId, ServletWebRequest request){

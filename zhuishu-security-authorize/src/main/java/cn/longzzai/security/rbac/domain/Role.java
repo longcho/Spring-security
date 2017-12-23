@@ -3,20 +3,12 @@
  */
 package cn.longzzai.security.rbac.domain;
 
+import org.springframework.data.annotation.CreatedDate;
+
+import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.springframework.data.annotation.CreatedDate;
 
 /**
  * 角色信息
@@ -25,7 +17,7 @@ import org.springframework.data.annotation.CreatedDate;
  *
  */
 @Entity
-public class Role {
+public class Role{
 	
 	/**
 	 * 数据库表主键

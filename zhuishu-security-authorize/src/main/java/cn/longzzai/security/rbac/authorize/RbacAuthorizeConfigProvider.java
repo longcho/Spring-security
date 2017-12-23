@@ -3,13 +3,13 @@
  */
 package cn.longzzai.security.rbac.authorize;
 
+import cn.longzzai.security.core.authorize.AuthorizeConfigProvider;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
 import org.springframework.stereotype.Component;
 
-import com.imooc.security.core.authorize.AuthorizeConfigProvider;
 
 /**
  * @author zhailiang

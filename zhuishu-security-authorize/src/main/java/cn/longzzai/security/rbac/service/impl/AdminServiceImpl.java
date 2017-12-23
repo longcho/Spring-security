@@ -50,6 +50,7 @@ public class AdminServiceImpl implements AdminService {
 		
 		Admin admin = new Admin();
 		BeanUtils.copyProperties(adminInfo, admin);
+		//todo 设置密码
 		admin.setPassword(passwordEncoder.encode("123456"));
 		adminRepository.save(admin);
 		adminInfo.setId(admin.getId());

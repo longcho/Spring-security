@@ -10,6 +10,7 @@
         <module name="security-sso-client1" />
         <module name="security-sso-server" />
         <module name="zhuishu-security-app" />
+        <module name="zhuishu-security-authorize" />
         <module name="zhuishu-security-browser" />
         <module name="zhuishu-security-browser1" />
         <module name="zhuishu-security-core" />
@@ -24,6 +25,7 @@
       <module name="security-sso-server" target="1.8" />
       <module name="zhuishu-security" target="1.8" />
       <module name="zhuishu-security-app" target="1.8" />
+      <module name="zhuishu-security-authorize" target="1.8" />
       <module name="zhuishu-security-browser" target="1.8" />
       <module name="zhuishu-security-browser1" target="1.5" />
       <module name="zhuishu-security-core" target="1.8" />

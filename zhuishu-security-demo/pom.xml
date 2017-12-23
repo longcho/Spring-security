@@ -16,14 +16,19 @@
     </parent>
 
     <dependencies>
-       <!-- <dependency>
+        <dependency>
             <groupId>cn.longzzai</groupId>
             <artifactId>zhuishu-security-browser</artifactId>
             <version>${zhuishu.security.version}</version>
-        </dependency>-->
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>cn.longzzai</groupId>-->
+            <!--<artifactId>zhuishu-security-app</artifactId>-->
+            <!--<version>1.0-SNAPSHOT</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>cn.longzzai</groupId>
-            <artifactId>zhuishu-security-app</artifactId>
+            <artifactId>zhuishu-security-authorize</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

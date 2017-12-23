@@ -1,6 +1,7 @@
 package cn.longzzai.security.app.config;
 
 import cn.longzzai.security.app.valicate.social.openid.OpenIdProviderIdAuthenticationConfig;
+import cn.longzzai.security.core.authorize.AuthorizeConfigProviderManager;
 import cn.longzzai.security.core.constant.SecurityConstant;
 import cn.longzzai.security.core.properties.SecurityRootProperties;
 import cn.longzzai.security.core.validate.common.ValidateCodeFilterConfig;
@@ -41,6 +42,9 @@ public class LongzzaiResourceServerConfig extends ResourceServerConfigurerAdapte
     @Autowired
     private OpenIdProviderIdAuthenticationConfig openIdProviderIdAuthenticationConfig;
 
+    @Autowired
+    private AuthorizeConfigProviderManager authorizeConfigProviderManager;
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
 
@@ -59,20 +63,9 @@ public class LongzzaiResourceServerConfig extends ResourceServerConfigurerAdapte
                 .apply(openIdProviderIdAuthenticationConfig)
                 .and()
                 .authorizeRequests()
-                .antMatchers(
-                        SecurityConstant.DEFAULT_UNAUTHENTICATION_URL,
-                        SecurityConstant.DEFAULT_LOGIN_PAGE_URL,
-                        SecurityConstant.DEFAULT_LOGIN_PROCESSING_URL_MOBILE,
-                        securityProperties.getBrowser().getLoginPage(),
-                        SecurityConstant.DEFAULT_VALIDATE_CODE_URL_PREFIX+"/*",
-                        securityProperties.getBrowser().getSignUpPage(),
-                        securityProperties.getSession().getSessionInvalidUrl(),
-                        "/user/regist","/social/signUp")
-                .permitAll()
-                .anyRequest()
-                .authenticated()
                 .and()
                 .csrf().disable();
+        authorizeConfigProviderManager.config(http.authorizeRequests());
 
     }
 }

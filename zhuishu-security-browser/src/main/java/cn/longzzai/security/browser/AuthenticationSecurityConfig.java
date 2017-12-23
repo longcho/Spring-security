@@ -1,6 +1,6 @@
 package cn.longzzai.security.browser;
 
-import cn.longzzai.security.core.constant.SecurityConstant;
+import cn.longzzai.security.core.authorize.AuthorizeConfigProviderManager;
 import cn.longzzai.security.core.properties.SecurityRootProperties;
 import cn.longzzai.security.core.validate.common.AbstractChannelSecurityConfig;
 import cn.longzzai.security.core.validate.common.ValidateCodeFilterConfig;
@@ -55,6 +55,8 @@ public class AuthenticationSecurityConfig extends AbstractChannelSecurityConfig 
     private InvalidSessionStrategy invalidSessionStrategy;
     @Autowired
     private LogoutSuccessHandler logoutSuccessHandler;
+    @Autowired
+    private AuthorizeConfigProviderManager authorizeConfigProviderManager;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -83,21 +85,8 @@ public class AuthenticationSecurityConfig extends AbstractChannelSecurityConfig 
                     .logout()
                         .logoutSuccessHandler(logoutSuccessHandler)
                 .and()
-                .authorizeRequests()
-                .antMatchers(
-                        SecurityConstant.DEFAULT_UNAUTHENTICATION_URL,
-                        SecurityConstant.DEFAULT_LOGIN_PAGE_URL,
-                        SecurityConstant.DEFAULT_LOGIN_PROCESSING_URL_MOBILE,
-                        securityProperties.getBrowser().getLoginPage(),
-                        SecurityConstant.DEFAULT_VALIDATE_CODE_URL_PREFIX+"/*",
-                        securityProperties.getBrowser().getSignUpPage(),
-                        securityProperties.getSession().getSessionInvalidUrl(),
-                        "/user/regist")
-                .permitAll()
-                .anyRequest()
-                .authenticated()
-                .and()
                 .csrf().disable();
+        authorizeConfigProviderManager.config(http.authorizeRequests());
 
     }
 

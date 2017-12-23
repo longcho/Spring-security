@@ -3,8 +3,9 @@
  */
 package cn.longzzai.security.rbac.authentication;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import cn.longzzai.security.rbac.domain.Admin;
+import cn.longzzai.security.rbac.repository.AdminRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,19 +13,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import cn.longzzai.security.rbac.domain.Admin;
-import cn.longzzai.security.rbac.repository.AdminRepository;
-
 /**
  * @author zhailiang
  *
  */
+@Slf4j
 @Component
 @Transactional
 public class RbacUserDetailsService implements UserDetailsService {
 
-	private Logger logger = LoggerFactory.getLogger(getClass());
-	
 	@Autowired
 	private AdminRepository adminRepository;
 
@@ -36,7 +33,7 @@ public class RbacUserDetailsService implements UserDetailsService {
 	 */
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		logger.info("表单登录用户名:" + username);
+		log.info("表单登录用户名:{}" , username);
 		Admin admin = adminRepository.findByUsername(username);
 		admin.getUrls();
 		return admin;

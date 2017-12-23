@@ -12,7 +12,7 @@ import cn.longzzai.security.rbac.domain.Admin;
  *
  */
 @Repository
-public interface AdminRepository extends ImoocRepository<Admin> {
+public interface AdminRepository extends LongzzaiRepository<Admin> {
 
 	Admin findByUsername(String username);
 

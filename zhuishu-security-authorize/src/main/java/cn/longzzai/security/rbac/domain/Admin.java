@@ -3,6 +3,7 @@
  */
 package cn.longzzai.security.rbac.domain;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
@@ -30,7 +31,7 @@ import org.springframework.security.core.userdetails.UserDetails;
  *
  */
 @Entity
-public class Admin implements UserDetails {
+public class Admin implements UserDetails{
 
 	/**
 	 * 

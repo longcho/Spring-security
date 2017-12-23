@@ -3,27 +3,16 @@
  */
 package cn.longzzai.security.rbac.domain;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
-
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
 import cn.longzzai.security.rbac.dto.ResourceInfo;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.annotation.CreatedDate;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 /**
  * 需要控制权限的资源，以业务人员能看懂的name呈现.实际关联到一个或多个url上。
@@ -34,7 +23,7 @@ import org.springframework.data.annotation.CreatedDate;
  *
  */
 @Entity
-public class Resource {
+public class Resource{
 
 	/**
 	 * 数据库表主键

@@ -3,16 +3,10 @@
  */
 package cn.longzzai.security.rbac.domain;
 
-import java.util.Date;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
 import org.springframework.data.annotation.CreatedDate;
+
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * 角色资源关系表
@@ -21,7 +15,7 @@ import org.springframework.data.annotation.CreatedDate;
  *
  */
 @Entity
-public class RoleResource {
+public class RoleResource{
 
 	/**
 	 * 数据库表主键

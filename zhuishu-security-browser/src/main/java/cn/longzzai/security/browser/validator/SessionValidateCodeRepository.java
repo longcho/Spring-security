@@ -26,7 +26,7 @@ public class SessionValidateCodeRepository implements ValidateCodeRepository {
 
     @Override
     public CodeDTO get(ServletWebRequest request, String key) {
-        return null;
+        return (CodeDTO) sessionStrategy.getAttribute(request, key);
     }
 
     @Override

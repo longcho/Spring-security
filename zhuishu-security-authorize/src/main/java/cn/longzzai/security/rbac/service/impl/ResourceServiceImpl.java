@@ -3,11 +3,9 @@
  */
 package cn.longzzai.security.rbac.service.impl;
 
-import java.util.List;
-
-import cn.longzzai.security.rbac.dto.ResourceInfo;
 import cn.longzzai.security.rbac.domain.Admin;
 import cn.longzzai.security.rbac.domain.Resource;
+import cn.longzzai.security.rbac.dto.ResourceInfo;
 import cn.longzzai.security.rbac.repository.AdminRepository;
 import cn.longzzai.security.rbac.repository.ResourceRepository;
 import cn.longzzai.security.rbac.service.ResourceService;
@@ -15,6 +13,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * @author zhailiang
@@ -59,7 +59,7 @@ public class ResourceServiceImpl implements ResourceService {
 		BeanUtils.copyProperties(info, resource);
 		parent.addChild(resource);
 		info.setId(resourceRepository.save(resource).getId());
-		return info;		
+		return info;
 	}
 
 	@Override
