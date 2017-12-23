@@ -53,5 +53,5 @@ com.imooc.security.core.validate.code.ValidateCodeGenerator
 org.springframework.social.connect.ConnectionSignUp
 
 
-后台管理系统:longzzai.cn/manage.html
+[后台管理系统地址](longzzai.cn/manage.html)
 管理员 admin  密码 123456
