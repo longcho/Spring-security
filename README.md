@@ -51,3 +51,7 @@ com.imooc.security.core.validate.code.ValidateCodeGenerator
 
 9.当spring容器中有下面这个接口的实现时，则在社交登录的方法注册时（第一次登录），用此接口的实现自动注册用户，不会跳到注册页面
 org.springframework.social.connect.ConnectionSignUp
+
+
+后台管理系统:longzzai.cn/manage.html
+管理员 admin  密码 123456
